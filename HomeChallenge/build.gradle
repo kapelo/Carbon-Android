@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group 'HomeChallenge'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+task buildJar (type: Jar) {
+    manifest {
+        attributes  'Implementation-Title': 'Carbon Home Test Challenge Challenge',
+                'Implementation-Version': version,
+                'Main-Class': 'TestRunner'
+    }
+    baseName = project.name + "-FM"
+    from {configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}}
+    with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useTestNG(){
+        useDefaultListeners = true
+    }
+
+    reports.html.enabled = false
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.12'
+
+    compile group: 'io.appium', name: 'java-client', version: '7.0.0'
+
+    compile group: 'org.testng', name: 'testng', version: '7.0.0'
+}

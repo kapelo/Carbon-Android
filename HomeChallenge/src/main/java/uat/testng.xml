@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite thread-count="1" name="Home Challenge Suite" parallel="false">
+    <test name="Sign In" preserve-order="true">
+        <classes >
+            <class name="uat.SignInTest" />
+        </classes >
+    </test>
+    <test name="Airtime Recharge" preserve-order="true">
+        <classes >
+            <class name="uat.AirtimeRechargeTest" />
+        </classes >
+    </test>
+    <test name="Fund Wallet" preserve-order="true">
+        <classes >
+            <class name="uat.FundWalletTest" />
+        </classes >
+    </test>
+    <test name="WalletTrans" preserve-order="true">
+        <classes >
+            <class name="uat.ViewWalletTransactionsTest" />
+        </classes >
+    </test>
+</suite>
